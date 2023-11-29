@@ -1,0 +1,25 @@
+from tkinter import *
+
+janela = Tk()
+janela.geometry("400x400")
+janela.title("Calculadora de IMC")
+
+
+titulo = Label(janela, text="Conversor de medidas")
+titulo.pack()
+
+centimetros = Entry(janela)
+centimetros.pack()
+
+resultado_label = Label(janela, text="")
+resultado_label.pack()
+
+def calcular():
+    centimetros_value = float(centimetros.get())
+    metros = centimetros_value / 100
+    resultado_label.config(text="O valor em metros é: " + str(metros)"m")
+
+botao = Button(janela, text="Calcular", command=calcular)
+botao.pack()
+
+janela.mainloop()
